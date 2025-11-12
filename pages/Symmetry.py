@@ -6,7 +6,7 @@ import os
 register_page(__name__, path="/symmetry", order=4)
 
 # GitHub raw URL for master CSV
-MASTER_CSV_URL = "https://raw.githubusercontent.com/rigg-alex/DEXA_Dashboard/main/Data/master_dexa_data.csv"
+MASTER_CSV_URL = "Data/master_dexa_data.csv"     
 
 # Load data
 try:
@@ -168,6 +168,8 @@ def create_symmetry_plot(df, symmetry_type):
 
 # Create the symmetry dataframe
 symmetry_df = calculate_symmetry(df)
+
+print("Symmetry DF columns:", symmetry_df.columns.tolist())
 
 # Page layout
 layout = html.Div([

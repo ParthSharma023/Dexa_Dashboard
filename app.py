@@ -24,7 +24,7 @@ app.layout = html.Div([
     html.Div([
         dcc.Link("Overview", href="/", className='nav-link'),
         dcc.Link("Body Part Trends", href="/body-part-trend", className='nav-link'),
-        dcc.Link("Composition Indices", href="/dexa-dashboard", className='nav-link'),
+        dcc.Link("Benchmarks", href="/dexa-dashboard", className='nav-link'),
         dcc.Link("Symmetry", href="/symmetry", className='nav-link')
     ], style={
         'textAlign': 'center',
@@ -43,17 +43,17 @@ app.layout = html.Div([
     }),
     
     # Footer
+    # Footer
     html.Footer(
-        html.P("DEXA Analysis Dashboard", 
+        html.P(
+            "DEXA Analysis Dashboard",
             style={
                 'textAlign': 'center',
                 'padding': '1rem',
                 'color': '#666',
-                'position': 'fixed',
-                'bottom': '0',
-                'width': '100%',
                 'backgroundColor': 'white',
-                'borderTop': '1px solid #eee'
+                'borderTop': '1px solid #eee',
+                'marginTop': '40px'
             }
         )
     )
@@ -116,4 +116,4 @@ app.index_string = '''
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=False, host='0.0.0.0', port=8080)  # Production configuration
+    app.run(debug=False, host='0.0.0.0', port=8080)  # Production configuration
